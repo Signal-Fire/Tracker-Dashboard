@@ -3,6 +3,9 @@ var app = express();
 
 /*  Templates
 */
+app.use(express.static('views'));
+app.use(express.static('views'));
+
 var indextemplate = require('pug').compileFile(__dirname + '/views/index.pug');
 
 var port = 8080;
