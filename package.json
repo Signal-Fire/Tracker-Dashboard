@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Signal-Fire/Tracker-Dashboard/issues"
   },
-  "homepage": "https://github.com/Signal-Fire/Tracker-Dashboard#readme"
+  "homepage": "https://github.com/Signal-Fire/Tracker-Dashboard#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.11",
+    "pug": "^2.0.0-rc.4"
+  }
 }
