@@ -1,6 +1,8 @@
 var express = require('express');
-var session = require('express-session');
+var sesh = require('express-session');
 var app = express();
+
+var port = 8080;
 
 /*  Templates
 */
@@ -12,20 +14,30 @@ var indextemplate = require('pug').compileFile(__dirname + '/views/index.pug'),
 
 /*  Session Handling
 */
-
-app.use(session({
+app.use(sesh({
     secret: 'wotcha',
     resave: false,
-
+    maxAge: 10000,
+    saveUninitialized: true,
+    cookie: { secure: false }
 }));
-var port = 8080;
 
-app.get('/', function(req, res, next) {
-    res.send(indextemplate({ title: 'Homepage' }));
+app.get('/', function(req, res, next) {    
+    if (req.session.loggedIn) {
+        res.send(indextemplate({ title: 'Homepage' }));
+    } else {
+        res.send(logintemplate({ title: 'Login' }));
+    }
+    req.session.errors = null;
 });
 
 app.get('/login', function(req, res, next) {
-    res.send(logintemplate({ title: 'Login' }));
+    if (req.session.loggedIn) {
+        res.send(indextemplate( { title: 'Homepage' }));
+    } else {
+        res.send(logintemplate({ title: 'Login' }));        
+    }
+    req.session.errors = null;
 });
 
 app.listen(port, function() {
