@@ -18,7 +18,9 @@
   "homepage": "https://github.com/Signal-Fire/Tracker-Dashboard#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.1",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "morgan": "^1.9.0",
     "nodemon": "^1.14.11",
     "pug": "^2.0.0-rc.4"

@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title=title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //if lte IE 8
+      script(src='/assets/js/ie/html5shiv.js')
+    link(rel='stylesheet', href='/assets/css/main.css')
+    //if lte IE 8
+      link(rel='stylesheet', href='/assets/css/ie8.css')
+    //if lte IE 9
+      link(rel='stylesheet', href='/assets/css/ie9.css')
+  body.landing
+    // Header
+    header#header.alt
+      h1
+        a(href='./') Admin   
+        // Banner
+    section#banner
+      i.icon.fa-mobile-phone
+      h2 Tracker
+      p Admin Control Panel for Tracker        
+    // Login
+    section#two.wrapper.style2.special
+      .inner
+        header.major.narrow
+          h2 Login
+        form(action='#', method='POST')
+          .container(class='75%')
+            .row.uniform(class='50%')              
+              .six(class='12u$ 6u$(xsmall)')
+                input(name='email', placeholder='Email', type='email')
+              .sixu(class='12u$ 6u$(xsmall)')
+                input(name='name', placeholder='Name', type='password')
+          ul.actions
+            li
+              input.special(type='submit', value='Login')       
+    // Footer
+    footer#footer
+      .inner
+        
+    // Scripts
+    script(src='./assets/js/jquery.min.js')
+    script(src='./assets/js/skel.min.js')
+    script(src='./assets/js/util.js')
+    //if lte IE 8
+      script(src='./assets/js/ie/respond.min.js')
+    script(src='./assets/js/main.js')
