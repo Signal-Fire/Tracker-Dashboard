@@ -19,5 +19,9 @@ module.exports = function(app) {
             res.send(logintemplate({ title: 'Login' }));        
         }
         req.session.errors = null;
-    });    
+    }); 
+    
+    app.post('/dologin', function(req, res, next) {
+
+    });
 };

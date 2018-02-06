@@ -23,6 +23,8 @@ app.use(express.static('views'));
 */
 require('./routes/routes')(app);
 
+/* Listen
+*/
 app.listen(port, function() {
     console.log("Tracker Admin UI running on " +  port);
 });
