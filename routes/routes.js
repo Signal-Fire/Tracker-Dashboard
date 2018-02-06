@@ -1,6 +1,6 @@
 
-var indextemplate = require('pug').compileFile('../views/index.pug'),
-    logintemplate = require('pug').compileFile('../views/login.pug');
+var indextemplate = require('pug').compileFile('./views/index.pug'),
+    logintemplate = require('pug').compileFile('./views/login.pug');
 
 module.exports = function(app) {
     app.get('/', function(req, res, next) {    
