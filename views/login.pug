@@ -22,13 +22,13 @@ html
       .inner
         header.major.narrow
           h2 Login
-        form(action='#', method='POST')
+        form(action='/dologin', method='POST')
           .container(class='25%')
             .row.uniform(class='25%')              
               .six(class='12u$ 12u$(xsmall)')
                 input(name='email', placeholder='Email', type='email')
               .sixu(class='12u$ 12u$(xsmall)')
-                input(name='name', placeholder='Name', type='password')
+                input(name='password', placeholder='Password', type='password')
           ul.actions
             li
               input.special(type='submit', value='Login')    
