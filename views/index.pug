@@ -25,7 +25,7 @@ html
         li          
           a(href='#two') Add Device          
         li
-          a(href='./elements') View Devices
+          a(href='#three') View Devices
         li
           a(href='./logout') Logout
       
@@ -37,20 +37,20 @@ html
     // One
     section#one.wrapper.style1
       .inner
-        article.feature.right
-          span.image
-            img(src='./images/pic02.jpg', alt='')     
+        article.feature.left          
           .content
             h2 Recent Logs
             table              
               for device in positions
                 tr
-                  td
-                    p=JSON.stringify(device.device)
-                  td
-                    p=JSON.stringify(device.latitude)
-                  td
-                    p=JSON.stringify(device.longitude)        
+                  th
+                    p="Device: " + device.device
+                  tr
+                    td
+                      p="Lat: " + device.latitude
+                  tr
+                    td
+                      p="Long: " + device.longitude    
     // Two
     section#two.wrapper.special
       .inner
@@ -66,8 +66,28 @@ html
             li
               input.special(type='submit', value='Submit')
             li
-              input.alt(type='reset', value='Reset')        
-    
+              input.alt(type='reset', value='Reset')       
+
+    // Three
+    section#three.wrapper.special
+      .inner
+        header.major.narrow
+          h2 View Devices
+          p All registered devices
+        .container(class='25%')
+          .row.uniform(class='25%')
+            table(style="text-align: center;")                     
+              for pos in posList
+                tr
+                  th
+                    p="Device: " + pos._id
+                tr
+                  td
+                    p="Email: " + pos.email
+                tr
+                  td              
+                    - var downloadLink = 'download/' + pos._id;        
+                    a(href=downloadLink target='_blank') Download Log
     // Footer
     footer#footer
       .inner

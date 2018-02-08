@@ -7,10 +7,20 @@ var Requests = new requester();
 module.exports = function(app) {
     app.get('/', function(req, res, next) {    
         if (req.session.loggedIn) {
+            var returnResult = Requests.GetPositions();
+            var deviceList = Requests.GetDevices();
+
+            Promise.all([returnResult, deviceList]).then(function(result) {
+                var positions = result[0].slice(1, 4);
+                res.send(indextemplate({ title: 'Homepage', positions: positions, posList: result[1] }));
+            }).catch(function(err) {
+                console.log('Error');
+            });
             Requests.GetPositions()
             .then(function(result) {
-                var returnResult = result.slice(1, 4);
-                res.send(indextemplate({ title: 'Homepage', positions: returnResult }));
+                
+                var deviceList = Requests.GetDevices();
+                
             }).catch(function(err) {
                 //do nothing
             });            
@@ -44,7 +54,26 @@ module.exports = function(app) {
         res.redirect('/login');
     });
 
-    app.get('/positions', function(req, res, next) {
+    app.post('/registerdevice', function(req, res, next) {
+        if (!req.session.loggedIn) 
+            res.redirect('/login');        
+
+        Requests.RegisterDevice(req.body.email)
+            .then(function(result) {
+                res.redirect('/');
+            }).catch(function(err) {
+                //do nothing
+            });
+    });
+
+    app.get('/download/:id', function(req, res, next) {
+        if (!req.session.loggedIn)
+            res.redirect('/login');
         
+        Requests.GetPositionsFromId(req.params.id).then(function(result) {
+            res.send(result);
+        }).catch(function(err) {
+            console.log(err);
+        });
     });
 };
