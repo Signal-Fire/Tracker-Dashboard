@@ -1,4 +1,3 @@
-
 var indextemplate = require('pug').compileFile('./views/index.pug'),
     logintemplate = require('pug').compileFile('./views/login.pug');
 
@@ -8,7 +7,13 @@ var Requests = new requester();
 module.exports = function(app) {
     app.get('/', function(req, res, next) {    
         if (req.session.loggedIn) {
-            res.send(indextemplate({ title: 'Homepage' }));
+            Requests.GetPositions()
+            .then(function(result) {
+                var returnResult = result.slice(1, 4);
+                res.send(indextemplate({ title: 'Homepage', positions: returnResult }));
+            }).catch(function(err) {
+                //do nothing
+            });            
         } else {
             res.redirect('/login');
         }
@@ -39,7 +44,7 @@ module.exports = function(app) {
         res.redirect('/login');
     });
 
-    app.get('/recentdevices', function(req, res, next) {
-
+    app.get('/positions', function(req, res, next) {
+        
     });
 };

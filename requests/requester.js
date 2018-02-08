@@ -23,6 +23,19 @@ class Requester {
             });
         });
     }
+
+    GetPositions() {
+        return new Promise(function(resolve, reject) {
+            request.get({url: config.api_url + '/find/all', json: true}, function optCallback(err, httpResponse, body) {
+                var responseCode = httpResponse.statusCode;
+                
+                if (err || (responseCode < 200 || responseCode > 210)) 
+                    reject("Invalid Request");
+
+                resolve(body);                
+            });
+        });
+    }
 }
 
 module.exports = Requester;

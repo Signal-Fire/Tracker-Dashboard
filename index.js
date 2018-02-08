@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.locals.moment = require('moment');
+
 /*  Session Handling
 */
 app.use(sesh({
