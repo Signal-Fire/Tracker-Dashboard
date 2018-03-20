@@ -35,7 +35,7 @@ html
       h2 Tracker
       p Admin Control Panel for Tracker      
     // One
-    section#one.wrapper.style1
+    //section#one.wrapper.style1
       .inner
         article.feature.left          
           .content
@@ -85,9 +85,10 @@ html
                   td
                     p="Email: " + pos.email
                 tr
-                  td              
-                    - var downloadLink = 'download/' + pos._id;        
-                    a(href=downloadLink target='_blank') Download Log
+                  td
+                    p="Logs: " +               
+                  //  - var downloadLink = 'download/' + pos._id;        
+                  //  a(href=downloadLink target='_blank') Download Log
     // Footer
     footer#footer
       .inner

@@ -7,23 +7,13 @@ var Requests = new requester();
 module.exports = function(app) {
     app.get('/', function(req, res, next) {    
         if (req.session.loggedIn) {
-            var returnResult = Requests.GetPositions();
             var deviceList = Requests.GetDevices();
 
-            Promise.all([returnResult, deviceList]).then(function(result) {
-                var positions = result[0].slice(1, 4);
-                res.send(indextemplate({ title: 'Homepage', positions: positions, posList: result[1] }));
+            Promise.all([deviceList]).then(function(result) {
+                res.send(indextemplate({ title: 'Homepage',  posList: result[0] }));
             }).catch(function(err) {
                 console.log('Error');
-            });
-            Requests.GetPositions()
-            .then(function(result) {
-                
-                var deviceList = Requests.GetDevices();
-                
-            }).catch(function(err) {
-                //do nothing
-            });            
+            });         
         } else {
             res.redirect('/login');
         }
