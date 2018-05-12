@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import { Feed } from '../Feed';
+import { Feed, CreateForm } from '../';
 
 import './Overview.css';
 
@@ -12,7 +12,7 @@ export default () => {
                         <Feed />
                 </Grid.Column>
                 <Grid.Column>
-                        h
+                        <CreateForm />
                 </Grid.Column>
             </Grid>
         </div>
