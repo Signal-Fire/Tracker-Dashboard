@@ -1,11 +1,12 @@
 import React from 'react';
 import { Feed, Icon } from 'semantic-ui-react';
-import { Summary, Location, DateAdded } from './';
+import { Summary, Location, DateAdded, Email } from './';
 
 export default ({
     name,
     device_id,
-    date_added
+    date_added,
+    email
 }) => {
     return (
         <Feed.Event>
@@ -14,6 +15,7 @@ export default ({
             </Feed.Label>
             <Feed.Content>
                <Summary name = {name} device_id = {device_id}/>
+               <Email email = {email}/>
                 <Feed.Meta>
                     <Location />
                     <DateAdded date_added = {date_added}/>
