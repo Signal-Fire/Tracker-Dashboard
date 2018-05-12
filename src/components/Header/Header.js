@@ -10,8 +10,7 @@ export default () => {
                 as='h2' 
                 icon 
                 textAlign='center' 
-                inverted 
-                color = 'white'>
+                inverted >
                 <Icon name='compass' circular />
                 <Header.Content>
                     Tracker

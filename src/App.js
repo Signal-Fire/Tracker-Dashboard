@@ -1,12 +1,12 @@
 import React from 'react';
-import { Header } from './components';
-
+import { Header, Overview } from './components';
 import './App.css';
 
 export default () => {
   return (
     <div className="App">
       <Header />
+      <Overview />
     </div>
   )
 }
