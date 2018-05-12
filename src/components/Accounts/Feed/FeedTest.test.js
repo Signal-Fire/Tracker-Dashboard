@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header';
+import Feed from './Feed';
 
-test('renders without crashing', () => {
+test('the feed renders', () => {
     var div = document.createElement('div');
-    ReactDOM.render(<Header />, div);
+    ReactDOM.render(<Feed />, div);
     ReactDOM.unmountComponentAtNode(div);
-});
+})
