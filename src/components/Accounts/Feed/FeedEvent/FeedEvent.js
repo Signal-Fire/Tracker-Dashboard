@@ -1,6 +1,6 @@
 import React from 'react';
 import { Feed, Icon } from 'semantic-ui-react';
-import { Summary, Location, DateAdded, Email } from './';
+import { Summary, Location, DateAdded, Email, Remove } from './';
 
 export default ({
     name,
@@ -19,6 +19,7 @@ export default ({
                 <Feed.Meta>
                     <Location />
                     <DateAdded date_added = {date_added}/>
+                    <Remove />
                 </Feed.Meta>
             </Feed.Content>
         </Feed.Event>
