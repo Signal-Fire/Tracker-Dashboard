@@ -2,12 +2,12 @@ import React from 'react';
 import { Feed } from 'semantic-ui-react';
 
 export default ({
-    name,
+    deviceType,
     device_id
 }) => {
     return (
         <Feed.Summary>
-            {name}, Device: {device_id}
+            {deviceType || 'Phone'}, ID: {device_id}
         </Feed.Summary>
     )
 }

@@ -3,7 +3,7 @@ import { Feed, Icon } from 'semantic-ui-react';
 import { Summary, Location, DateAdded, Email, Remove } from './';
 
 export default ({
-    name,
+    deviceType,
     device_id,
     date_added,
     email
@@ -14,7 +14,7 @@ export default ({
                 <Icon name = 'mobile' />
             </Feed.Label>
             <Feed.Content>
-               <Summary name = {name} device_id = {device_id}/>
+               <Summary type = {deviceType} device_id = {device_id}/>
                <Email email = {email}/>
                 <Feed.Meta>
                     <Location />

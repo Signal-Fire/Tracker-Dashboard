@@ -1,66 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Feed, Segment } from 'semantic-ui-react';
+import moment from 'moment';
 import { FeedEvent } from './FeedEvent';
 
-export default () => {
+const DevicesFeed = ({
+    devices
+}) => {
     return (
         <Segment>
             <Feed>
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
-                <FeedEvent
-                    name = 'Lucy Liu'
-                    device_id = '249825fdfgiub18'
-                    date_added = 'Today'
-                    email = 'lucyliu@badassgirls.com'
-                    />
+                {
+                    devices.map(x => (
+                        <FeedEvent
+                            email = {x.email}
+                            date_added = {moment(x.time).format('MMM Do YYYY')}
+                            device_id = {x._id}
+                            type = {x.type}
+                        />
+                    ))
+                }
             </Feed>
         </Segment>
     )
 }
+
+const mapStateToProps = state => ({
+    devices : state.devices.devices
+});
+
+export default connect(mapStateToProps, null)(DevicesFeed);
