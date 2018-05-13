@@ -1,6 +1,7 @@
 import React from 'react';
+import Yup from 'yup';
 import { withFormik } from 'formik';
-import { Segment, Form, Input, Select, Button } from 'semantic-ui-react';
+import { Segment, Form, Button, Label } from 'semantic-ui-react';
 
 const options = [
     { key: 'a', text: 'Android', value: 'Android' },
@@ -16,49 +17,50 @@ const InnerForm = ({
     handleSubmit,
     isSubmitting,
   }) => (
-    <Form>
+    <Form loading = {isSubmitting}>
         <Form.Group widths='equal'>
-            <Form.Field control={Input} label='Email' placeholder='Email Address' />
+            <Form.Field>
+                <Form.Input name = 'email' type = 'email' placeholder = 'Email Address' />
+                {errors.email ? <Label basic color='red' pointing>{errors.email}</Label> : false}
+            </Form.Field>
         </Form.Group>
-        <Form.Field control={Select} label='Device Type' options={options} placeholder='Device Type' />
-        <Form.Field control={Button}>Submit</Form.Field>
+        <Form.Group widths = 'equal'>
+            <Form.Field>
+                <Form.Select name ='deviceType' placeholder = 'Device Type' options = {options} />
+                {errors.deviceType ? <Label basic color = 'red' pointing>{errors.deviceType}</Label> : false}
+            </Form.Field>
+            <Form.Field>
+                <Button 
+                    positive
+                    type = 'submit'
+                    name = 'add'
+                    content = 'Add New User'
+                    onClick = {handleSubmit}
+                />
+            </Form.Field>
+        </Form.Group>
     </Form>
 );
 
-// Wrap our form with the using withFormik HoC
-const MyForm = withFormik({
-    // Transform outer props into form values
-    mapPropsToValues: props => ({ email: '', password: '' }),
-    // Add a custom validation function (this can be async too!)
-    validate: (values, props) => {
-      const errors = {};
-      if (!values.email) {
-        errors.email = 'Required';
-      } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-      ) {
-        errors.email = 'Invalid email address';
-      }
-      return errors;
+const CreateDeviceForm = withFormik({
+    mapPropsToValues : () => ({
+        email : '',
+        deviceType : ''
+    }),
+    validationSchema : Yup.object().shape({
+        email : Yup.string().required('Email is required!'),
+        deviceType : Yup.string().required('Device Type is required!'),
+    }),
+    handleSubmit : (values, { props, setSubmitting }) => {
+        console.log(values);  
     },
-    // Submission handler
-    handleSubmit: (
-      values,
-      {
-        props,
-        setSubmitting,
-        setErrors /* setValues, setStatus, and other goodies */,
-      }
-    ) => {
-      alert('hi');
-      setTimeout(1000, () => setSubmitting(false));
-    },
-  })(InnerForm);
+    displayName : 'Add Device'
+})(InnerForm);
 
 export default () => {
     return (
         <Segment>
-            <MyForm />
+            <CreateDeviceForm />
         </Segment>
     );
 }
