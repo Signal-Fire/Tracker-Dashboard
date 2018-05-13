@@ -1,7 +1,9 @@
 import React from 'react';
 import Yup from 'yup';
 import { withFormik } from 'formik';
-import { Segment, Form, Button, Label } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Form, Button, Label } from 'semantic-ui-react';
+import * as deviceActions from '../../../containers/Devices/action';
 
 const options = [
     { key: 'a', text: 'Android', value: 'Android' },
@@ -58,19 +60,16 @@ const CreateDeviceForm = withFormik({
         deviceType : Yup.string().required('Device Type is required!'),
     }),
     handleSubmit : (values, { props, setSubmitting }) => {
-        console.log(values);  
+        props.addDevice(values.email, values.deviceType, () => {
+            setSubmitting(false);
+            window.location.reload();
+        })
     },
     displayName : 'Add Device'
 })(InnerForm);
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => ({
+    addDevice : (email, type, callback) => { dispatch(deviceActions.addDevice(email, type, callback)) }
+})
 
-}
-
-export default () => {
-    return (
-        <Segment>
-            <CreateDeviceForm />
-        </Segment>
-    );
-}
+export default connect(null, mapDispatchToProps)(CreateDeviceForm);

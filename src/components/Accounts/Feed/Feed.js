@@ -20,7 +20,7 @@ const DevicesFeed = ({
                                 email = {x.email}
                                 date_added = {moment(x.time).format('MMM Do YYYY')}
                                 device_id = {x._id}
-                                type = {x.type}
+                                deviceType = {x.type}
                             />
                         ))
                     : 

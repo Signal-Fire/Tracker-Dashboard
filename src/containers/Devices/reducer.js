@@ -18,7 +18,7 @@ export default function(state = initialState, action) {
             }
         case actionTypes.ADD_DEVICE:
             if (!payload.error)
-                state.devices.push(payload.newDevice);
+                state.devices.concat(payload.newDevice);
 
             return {
                 ...state,

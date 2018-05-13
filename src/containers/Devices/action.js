@@ -25,10 +25,14 @@ export const getDevices = () => async(dispatch) => {
     })
 }
 
-export const addDevice = () => async(dispatch) => {
+export const addDevice = (email, device, callback) => async(dispatch) => {
     await axios({
         method : 'POST',
-        url : config.API_URL + ''
+        url : config.API_URL + '/create/device',
+        data : {
+            email : email,
+            type : device
+        }
     }).then(result => {
         dispatch({
             type : actionTypes.ADD_DEVICE,
@@ -37,6 +41,7 @@ export const addDevice = () => async(dispatch) => {
                 newDevice : result.data
             }
         })
+        callback(true);
     }).catch(error => {
         dispatch({
             type : actionTypes.ADD_DEVICE,
@@ -44,5 +49,6 @@ export const addDevice = () => async(dispatch) => {
                 error : true
             }
         })
+        callback(false);
     })
 }

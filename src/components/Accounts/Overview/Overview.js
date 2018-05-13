@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Segment } from 'semantic-ui-react';
 import { Feed, CreateForm } from '../';
 
 import './Overview.css';
@@ -9,7 +9,9 @@ export default () => {
         <div className = "Accounts-Table">
             <Grid columns = {2} stackable>
                 <Grid.Column>
-                        <CreateForm />
+                        <Segment>
+                            <CreateForm />
+                        </Segment>
                 </Grid.Column>
                 <Grid.Column>
                         <Feed />
