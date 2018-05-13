@@ -24,3 +24,25 @@ export const getDevices = () => async(dispatch) => {
         })
     })
 }
+
+export const addDevice = () => async(dispatch) => {
+    await axios({
+        method : 'POST',
+        url : config.API_URL + ''
+    }).then(result => {
+        dispatch({
+            type : actionTypes.ADD_DEVICE,
+            payload : {
+                error : false,
+                newDevice : result.data
+            }
+        })
+    }).catch(error => {
+        dispatch({
+            type : actionTypes.ADD_DEVICE,
+            payload : {
+                error : true
+            }
+        })
+    })
+}

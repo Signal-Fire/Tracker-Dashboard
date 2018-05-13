@@ -6,10 +6,11 @@ import { FeedEvent } from './FeedEvent';
 import { DefaultEvent } from './DefaultEvent';
 
 const DevicesFeed = ({
-    devices
+    devices,
+    isLoading
 }) => {
     return (
-        <Segment>
+        <Segment loading = {isLoading}>
             <Feed>
                 {
                     (devices !== null) ?
@@ -33,7 +34,8 @@ const DevicesFeed = ({
 }
 
 const mapStateToProps = state => ({
-    devices : state.devices.devices
+    devices : state.devices.devices,
+    isLoading : state.devices.loading
 });
 
 export default connect(mapStateToProps, null)(DevicesFeed);

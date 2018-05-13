@@ -16,6 +16,15 @@ export default function(state = initialState, action) {
                 error : payload.error,
                 devices : payload.error ? null : payload.devices
             }
+        case actionTypes.ADD_DEVICE:
+            if (!payload.error)
+                state.devices.push(payload.newDevice);
+
+            return {
+                ...state,
+                loading : false,
+                error : payload.error
+            }
         default:
             return state;
     }

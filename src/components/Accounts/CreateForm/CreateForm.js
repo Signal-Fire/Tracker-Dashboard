@@ -8,39 +8,45 @@ const options = [
     { key: 'i', text: 'iPhone', value: 'iPhone' },
   ]
 
-const InnerForm = ({
-    values,
-    errors,
-    touched,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isSubmitting,
-  }) => (
-    <Form loading = {isSubmitting}>
-        <Form.Group widths='equal'>
+const InnerForm = props => {
+    const {
+        values,
+        errors,
+        handleChange,
+        setFieldValue,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+      } = props;
+
+    const _handleSelect = (e, { value, name }) => {
+        setFieldValue(name, value);
+    }
+      
+    return (
+        <Form loading = {isSubmitting}>
             <Form.Field>
-                <Form.Input name = 'email' type = 'email' placeholder = 'Email Address' />
-                {errors.email ? <Label basic color='red' pointing>{errors.email}</Label> : false}
+                {errors.email ? <Label basic color='red' pointing = 'below'>{errors.email}</Label> : false}   
+                <Form.Input 
+                    value = {values.email} 
+                    onChange = {handleChange} onBlur = {handleBlur} name = 'email' type = 'email' placeholder = 'Email Address' />
             </Form.Field>
-        </Form.Group>
-        <Form.Group widths = 'equal'>
-            <Form.Field>
-                <Form.Select name ='deviceType' placeholder = 'Device Type' options = {options} />
-                {errors.deviceType ? <Label basic color = 'red' pointing>{errors.deviceType}</Label> : false}
-            </Form.Field>
-            <Form.Field>
-                <Button 
-                    positive
-                    type = 'submit'
-                    name = 'add'
-                    content = 'Add New User'
-                    onClick = {handleSubmit}
-                />
-            </Form.Field>
-        </Form.Group>
-    </Form>
-);
+            <Form.Group widths = 'equal'>
+                <Form.Field>
+                    <Form.Select 
+                        onChange = { _handleSelect }
+                        name ='deviceType' placeholder = 'Device Type' options = {options} />
+                    {errors.deviceType ? <Label basic color = 'red' pointing>{errors.deviceType}</Label> : false}
+                </Form.Field>
+                <Form.Field>
+                    <Button 
+                        positive
+                        type = 'submit' name = 'add' content = 'Add New User' onClick = {handleSubmit} />
+                </Form.Field>
+            </Form.Group>
+        </Form>
+    );
+}
 
 const CreateDeviceForm = withFormik({
     mapPropsToValues : () => ({
@@ -56,6 +62,10 @@ const CreateDeviceForm = withFormik({
     },
     displayName : 'Add Device'
 })(InnerForm);
+
+const mapDispatchToProps = dispatch => {
+
+}
 
 export default () => {
     return (
