@@ -1,0 +1,1 @@
+export const FIND_ALL_DEVICES = "devices.find.all";
