@@ -17,7 +17,7 @@ export default ({
                <Summary type = {deviceType} device_id = {device_id}/>
                <Email email = {email}/>
                 <Feed.Meta>
-                    <Location />
+                    <Location device_id = {device_id}/>
                     <DateAdded date_added = {date_added}/>
                     <Remove />
                 </Feed.Meta>

@@ -13,6 +13,7 @@ const DevicesFeed = ({
                 {
                     devices.map(x => (
                         <FeedEvent
+                            key = {x._id}
                             email = {x.email}
                             date_added = {moment(x.time).format('MMM Do YYYY')}
                             device_id = {x._id}
