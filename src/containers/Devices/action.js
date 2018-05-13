@@ -52,3 +52,28 @@ export const addDevice = (email, device, callback) => async(dispatch) => {
         callback(false);
     })
 }
+
+export const removeDevice = (deviceId, callback) => async(dispatch) => {
+    console.log(deviceId);
+    await axios({
+        method : 'POST',
+        url : config.API_URL + '/delete/' + deviceId
+    }).then(result => {
+        dispatch({
+            type : actionTypes.DELETE_DEVICE,
+            payload : {
+                error : false,
+                deletedDevice : result.data
+            }
+        })
+        callback(true);
+    }).catch(error => {
+        dispatch({
+            type : actionTypes.DELETE_DEVICE,
+            payload : {
+                error : true
+            }
+        })
+        callback(false);
+    })
+}

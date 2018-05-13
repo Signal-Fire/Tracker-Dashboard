@@ -19,7 +19,7 @@ export default ({
                 <Feed.Meta>
                     <Location device_id = {device_id}/>
                     <DateAdded date_added = {date_added}/>
-                    <Remove />
+                    <Remove device_id = {device_id} />
                 </Feed.Meta>
             </Feed.Content>
         </Feed.Event>

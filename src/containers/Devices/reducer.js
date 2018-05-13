@@ -25,6 +25,12 @@ export default function(state = initialState, action) {
                 loading : false,
                 error : payload.error
             }
+        case actionTypes.DELETE_DEVICE:
+            return {
+                ...state,
+                loading : false,
+                error : payload.error
+            }
         default:
             return state;
     }
