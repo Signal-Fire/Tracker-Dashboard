@@ -12,6 +12,54 @@ export default () => {
                     date_added = 'Today'
                     email = 'lucyliu@badassgirls.com'
                     />
+                <FeedEvent
+                    name = 'Lucy Liu'
+                    device_id = '249825fdfgiub18'
+                    date_added = 'Today'
+                    email = 'lucyliu@badassgirls.com'
+                    />
+                <FeedEvent
+                    name = 'Lucy Liu'
+                    device_id = '249825fdfgiub18'
+                    date_added = 'Today'
+                    email = 'lucyliu@badassgirls.com'
+                    />
+                <FeedEvent
+                    name = 'Lucy Liu'
+                    device_id = '249825fdfgiub18'
+                    date_added = 'Today'
+                    email = 'lucyliu@badassgirls.com'
+                    />
+                <FeedEvent
+                    name = 'Lucy Liu'
+                    device_id = '249825fdfgiub18'
+                    date_added = 'Today'
+                    email = 'lucyliu@badassgirls.com'
+                    />
+                <FeedEvent
+                    name = 'Lucy Liu'
+                    device_id = '249825fdfgiub18'
+                    date_added = 'Today'
+                    email = 'lucyliu@badassgirls.com'
+                    />
+                <FeedEvent
+                    name = 'Lucy Liu'
+                    device_id = '249825fdfgiub18'
+                    date_added = 'Today'
+                    email = 'lucyliu@badassgirls.com'
+                    />
+                <FeedEvent
+                    name = 'Lucy Liu'
+                    device_id = '249825fdfgiub18'
+                    date_added = 'Today'
+                    email = 'lucyliu@badassgirls.com'
+                    />
+                <FeedEvent
+                    name = 'Lucy Liu'
+                    device_id = '249825fdfgiub18'
+                    date_added = 'Today'
+                    email = 'lucyliu@badassgirls.com'
+                    />
             </Feed>
         </Segment>
     )
