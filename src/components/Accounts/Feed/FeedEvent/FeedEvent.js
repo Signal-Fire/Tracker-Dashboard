@@ -14,12 +14,12 @@ export default ({
                 <Icon name = 'mobile' />
             </Feed.Label>
             <Feed.Content>
-               <Summary type = {deviceType} device_id = {device_id}/>
+               <Summary deviceType = {deviceType} device_id = {device_id}/>
                <Email email = {email}/>
                 <Feed.Meta>
                     <Location device_id = {device_id}/>
                     <DateAdded date_added = {date_added}/>
-                    <Remove />
+                    <Remove device_id = {device_id} />
                 </Feed.Meta>
             </Feed.Content>
         </Feed.Event>

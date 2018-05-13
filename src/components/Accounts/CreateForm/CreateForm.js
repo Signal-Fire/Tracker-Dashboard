@@ -1,46 +1,54 @@
 import React from 'react';
 import Yup from 'yup';
 import { withFormik } from 'formik';
-import { Segment, Form, Button, Label } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Form, Button, Label } from 'semantic-ui-react';
+import * as deviceActions from '../../../containers/Devices/action';
 
 const options = [
     { key: 'a', text: 'Android', value: 'Android' },
     { key: 'i', text: 'iPhone', value: 'iPhone' },
   ]
 
-const InnerForm = ({
-    values,
-    errors,
-    touched,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isSubmitting,
-  }) => (
-    <Form loading = {isSubmitting}>
-        <Form.Group widths='equal'>
+const InnerForm = props => {
+    const {
+        values,
+        errors,
+        handleChange,
+        setFieldValue,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+      } = props;
+
+    const _handleSelect = (e, { value, name }) => {
+        setFieldValue(name, value);
+    }
+      
+    return (
+        <Form loading = {isSubmitting}>
             <Form.Field>
-                <Form.Input name = 'email' type = 'email' placeholder = 'Email Address' />
-                {errors.email ? <Label basic color='red' pointing>{errors.email}</Label> : false}
+                {errors.email ? <Label basic color='red' pointing = 'below'>{errors.email}</Label> : false}   
+                <Form.Input 
+                    value = {values.email} 
+                    onChange = {handleChange} onBlur = {handleBlur} name = 'email' type = 'email' placeholder = 'Email Address' />
             </Form.Field>
-        </Form.Group>
-        <Form.Group widths = 'equal'>
-            <Form.Field>
-                <Form.Select name ='deviceType' placeholder = 'Device Type' options = {options} />
-                {errors.deviceType ? <Label basic color = 'red' pointing>{errors.deviceType}</Label> : false}
-            </Form.Field>
-            <Form.Field>
-                <Button 
-                    positive
-                    type = 'submit'
-                    name = 'add'
-                    content = 'Add New User'
-                    onClick = {handleSubmit}
-                />
-            </Form.Field>
-        </Form.Group>
-    </Form>
-);
+            <Form.Group widths = 'equal'>
+                <Form.Field>
+                    <Form.Select 
+                        onChange = { _handleSelect }
+                        name ='deviceType' placeholder = 'Device Type' options = {options} />
+                    {errors.deviceType ? <Label basic color = 'red' pointing>{errors.deviceType}</Label> : false}
+                </Form.Field>
+                <Form.Field>
+                    <Button 
+                        positive
+                        type = 'submit' name = 'add' content = 'Add New User' onClick = {handleSubmit} />
+                </Form.Field>
+            </Form.Group>
+        </Form>
+    );
+}
 
 const CreateDeviceForm = withFormik({
     mapPropsToValues : () => ({
@@ -52,15 +60,16 @@ const CreateDeviceForm = withFormik({
         deviceType : Yup.string().required('Device Type is required!'),
     }),
     handleSubmit : (values, { props, setSubmitting }) => {
-        console.log(values);  
+        props.addDevice(values.email, values.deviceType, () => {
+            setSubmitting(false);
+            window.location.reload();
+        })
     },
     displayName : 'Add Device'
 })(InnerForm);
 
-export default () => {
-    return (
-        <Segment>
-            <CreateDeviceForm />
-        </Segment>
-    );
-}
+const mapDispatchToProps = dispatch => ({
+    addDevice : (email, type, callback) => { dispatch(deviceActions.addDevice(email, type, callback)) }
+})
+
+export default connect(null, mapDispatchToProps)(CreateDeviceForm);
