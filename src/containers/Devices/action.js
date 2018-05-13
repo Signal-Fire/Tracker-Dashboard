@@ -6,7 +6,7 @@ import axios from 'axios';
 export const getDevices = () => async(dispatch) => {
     await axios({
         method : 'GET',
-        url : config.API_URL + '/find/devices/all'
+        url : config.FIND_ALL_DEVICES_URL
     }).then(result => {
         dispatch({
             type : actionTypes.FIND_ALL_DEVICES,
@@ -28,7 +28,7 @@ export const getDevices = () => async(dispatch) => {
 export const addDevice = (email, device, callback) => async(dispatch) => {
     await axios({
         method : 'POST',
-        url : config.API_URL + '/create/device',
+        url : config.CREATE_DEVICE_URL,
         data : {
             email : email,
             type : device
@@ -54,10 +54,9 @@ export const addDevice = (email, device, callback) => async(dispatch) => {
 }
 
 export const removeDevice = (deviceId, callback) => async(dispatch) => {
-    console.log(deviceId);
     await axios({
         method : 'POST',
-        url : config.API_URL + '/delete/' + deviceId
+        url : config.DELETE_DEVICE_URL + '/' + deviceId
     }).then(result => {
         dispatch({
             type : actionTypes.DELETE_DEVICE,
