@@ -2,7 +2,8 @@ import React from 'react';
 import Yup from 'yup';
 import { withFormik } from 'formik';
 import { connect } from 'react-redux';
-import { Form, Button, Label } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
+import { ErrorLabel } from '../../Labels';
 import * as deviceActions from '../../../containers/Devices/action';
 
 const options = [
@@ -18,7 +19,7 @@ const InnerForm = props => {
         setFieldValue,
         handleBlur,
         handleSubmit,
-        isSubmitting,
+        isSubmitting
       } = props;
 
     const _handleSelect = (e, { value, name }) => {
@@ -28,7 +29,7 @@ const InnerForm = props => {
     return (
         <Form loading = {isSubmitting}>
             <Form.Field>
-                {errors.email ? <Label basic color='red' pointing = 'below'>{errors.email}</Label> : false}   
+                {errors.email ? <ErrorLabel pointing = 'below' message = {errors.email} /> : false}   
                 <Form.Input 
                     value = {values.email} 
                     onChange = {handleChange} onBlur = {handleBlur} name = 'email' type = 'email' placeholder = 'Email Address' />
@@ -38,7 +39,7 @@ const InnerForm = props => {
                     <Form.Select 
                         onChange = { _handleSelect }
                         name ='deviceType' placeholder = 'Device Type' options = {options} />
-                    {errors.deviceType ? <Label basic color = 'red' pointing>{errors.deviceType}</Label> : false}
+                    {errors.deviceType ? <ErrorLabel pointing message = {errors.deviceType} /> : false}
                 </Form.Field>
                 <Form.Field>
                     <Button 

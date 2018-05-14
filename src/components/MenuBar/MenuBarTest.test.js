@@ -1,23 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginModal from './LoginModal';
+import MenuBar from './MenuBar';
 import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 
-const middlewares = [thunk] // add your middlewares like `redux-thunk`
-const mockStore = configureStore(middlewares)
+const middlewares = [thunk]
+const mockStore = configureStore(middlewares);
 
-test('the feed renders', () => {
+it('renders the menu bar without crashing', () => {
     const store = mockStore({
         users : {
             token : null
         }
     })
+
     var div = document.createElement('div');
     ReactDOM.render(
     <Provider store = {store}>
-        <LoginModal />
+        <MenuBar />
     </Provider>, div);
     ReactDOM.unmountComponentAtNode(div);
 })

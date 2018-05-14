@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom';
 
 import registerServiceWorker from './registerServiceWorker';
 
-/* App Component */
 import App from './App';
 
-/* CSS */
 import './index.css';
 import 'semantic-ui-css/semantic.min.css';
 
-/* Redux */
 import { Provider } from 'react-redux';
 
 import * as stateActions from './store/stateManager';

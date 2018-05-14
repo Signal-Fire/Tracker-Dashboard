@@ -1,12 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Modal } from 'semantic-ui-react';
+import TemplateModal from './Template';
+import { LoginForm } from './LoginForm';
 
 const LoginModal = ({
-    message
+    token
 }) => {
     return (
-        <div></div>
+        <TemplateModal
+            size = 'tiny'
+            open = {token === null}>
+            <Modal.Header>
+                Login
+            </Modal.Header>
+            <Modal.Content>
+                <LoginForm />
+            </Modal.Content>
+        </TemplateModal>
     );
 }
 
-export default connect(null, null)(LoginModal);
+const mapStateToProps = state => ({
+    token : state.users.token
+})
+
+
+export default connect(mapStateToProps, null)(LoginModal);

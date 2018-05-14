@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { Feed, CreateForm } from '../';
+import { MenuBar } from '../../MenuBar';
 
 import './Overview.css';
 
@@ -14,6 +15,7 @@ export default () => {
                         </Segment>
                 </Grid.Column>
                 <Grid.Column>
+                        <MenuBar />
                         <Feed />
                 </Grid.Column>                
             </Grid>
