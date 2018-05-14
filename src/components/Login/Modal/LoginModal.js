@@ -15,7 +15,9 @@ const LoginModal = ({
                 Hello
             </Modal.Header>
             <Modal.Content>
-                Hello there!
+                <Modal.Description>
+                    
+                </Modal.Description>
             </Modal.Content>
         </TemplateModal>
     );

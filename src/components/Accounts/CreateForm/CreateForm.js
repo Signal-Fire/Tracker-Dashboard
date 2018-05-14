@@ -18,7 +18,7 @@ const InnerForm = props => {
         setFieldValue,
         handleBlur,
         handleSubmit,
-        isSubmitting,
+        isSubmitting
       } = props;
 
     const _handleSelect = (e, { value, name }) => {
