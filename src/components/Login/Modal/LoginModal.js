@@ -1,12 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Modal } from 'semantic-ui-react';
+import TemplateModal from './Template';
+
+import * as loginActions from '../../../containers/Users/action';
 
 const LoginModal = ({
-    message
+    token
 }) => {
     return (
-        <div></div>
+        <TemplateModal
+            open = {token === null}>
+            <Modal.Header>
+                Hello
+            </Modal.Header>
+            <Modal.Content>
+                Hello there!
+            </Modal.Content>
+        </TemplateModal>
     );
 }
 
-export default connect(null, null)(LoginModal);
+const mapStateToProps = state => ({
+    token : state.users.token
+})
+
+const mapDispatchToProps = dispatch => ({
+    loginUser : (email, password) => { dispatch(loginActions.loginUser(email, password)) }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginModal);

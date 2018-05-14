@@ -10,8 +10,8 @@ const mockStore = configureStore(middlewares)
 
 test('the feed renders', () => {
     const store = mockStore({
-        devices : {
-            devices : []
+        users : {
+            token : null
         }
     })
     var div = document.createElement('div');
