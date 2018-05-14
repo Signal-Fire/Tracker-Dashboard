@@ -30,3 +30,9 @@ export const loginUser = (email, password, callback) => async(dispatch) => {
         callback(false);
     })
 }
+
+export const Logout = () => async(dispatch) => {
+    dispatch({
+        type : actionTypes.LOGOUT
+    })
+}

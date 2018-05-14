@@ -39,7 +39,7 @@ const InnerForm = props => {
                     <Form.Select 
                         onChange = { _handleSelect }
                         name ='deviceType' placeholder = 'Device Type' options = {options} />
-                    {errors.deviceType ? <ErrorLabel pointing message = {errors.email} /> : false}
+                    {errors.deviceType ? <ErrorLabel pointing message = {errors.deviceType} /> : false}
                 </Form.Field>
                 <Form.Field>
                     <Button 

@@ -13,6 +13,11 @@ export default function(state = initialState, action) {
                 ...state,
                 token : payload.error ? null : payload.user.token
             }
+        case actionTypes.LOGOUT:
+            return {
+                ...state,
+                token : null
+            }
         default:
             return state;
     }
