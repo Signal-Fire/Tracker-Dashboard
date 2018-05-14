@@ -10,7 +10,7 @@ const Logout = ({
 )
 
 const mapDispatchToProps = dispatch => ({
-    performLogout : () => { dispatch(userActions.Logout()) }
+    performLogout : () => { dispatch(userActions.Logout()); window.location.reload(); }
 })
 
 export default connect(null, mapDispatchToProps)(Logout)
