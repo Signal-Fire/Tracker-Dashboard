@@ -3,7 +3,7 @@ import * as config from '../../config';
 
 import axios from 'axios';
 
-export const loginUser = (email, password) => async(dispatch) => {
+export const loginUser = (email, password, callback) => async(dispatch) => {
     await axios({
         method : 'POST',
         url : config.ADMIN_LOGIN_URL,
@@ -19,6 +19,7 @@ export const loginUser = (email, password) => async(dispatch) => {
                 user : result.data
             }
         })
+        callback(true);
     }).catch(error => {
         dispatch({
             type : actionTypes.USER_LOGIN,
@@ -26,5 +27,6 @@ export const loginUser = (email, password) => async(dispatch) => {
                 error : true
             }
         })
+        callback(false);
     })
 }

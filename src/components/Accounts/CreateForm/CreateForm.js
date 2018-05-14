@@ -2,7 +2,7 @@ import React from 'react';
 import Yup from 'yup';
 import { withFormik } from 'formik';
 import { connect } from 'react-redux';
-import { Form, Button, Label } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 import { ErrorLabel } from '../../Labels';
 import * as deviceActions from '../../../containers/Devices/action';
 
