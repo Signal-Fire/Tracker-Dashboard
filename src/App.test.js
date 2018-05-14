@@ -12,6 +12,9 @@ test('renders without crashing', () => {
   const store = mockStore({
     devices : {
         devices : []
+    },
+    users : {
+        token : null
     }
   })
   const div = document.createElement('div');
