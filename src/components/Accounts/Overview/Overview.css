@@ -11,3 +11,8 @@
         margin-right : 18%;
     }
 }
+
+.Feed-Table {
+    height : 480px;
+    overflow : scroll;
+}
