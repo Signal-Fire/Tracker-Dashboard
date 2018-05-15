@@ -14,9 +14,11 @@ export default () => {
                             <CreateForm />
                         </Segment>
                 </Grid.Column>
-                <Grid.Column>
+                <Grid.Column >
                         <MenuBar />
+                    <div className = "Feed-Table">
                         <Feed />
+                    </div>
                 </Grid.Column>                
             </Grid>
         </div>
