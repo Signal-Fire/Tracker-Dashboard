@@ -9,10 +9,10 @@ The core functionality is as follows:
 - View Users
 - Logout
 
-It has been designed with simplicity in mind! Feel free to reuse parts of the dashboard if you see fit! Enjoy & happy coding! 👻 
+The dashboard has been designed with simplicity in mind! Feel free to reuse parts of the dashboard if you see fit! Enjoy & happy coding! 👻 
 
-Credit where credit is due, of course...
+#### Credit where credit is due, of course...
 
-The awesome [Semantic-UI](https://github.com/Semantic-Org/Semantic-UI)
-[Axios](https://github.com/axios/axios)
-[Jest](https://github.com/facebook/jest)
+- The awesome [Semantic-UI](https://github.com/Semantic-Org/Semantic-UI)
+- [Axios](https://github.com/axios/axios)
+- [Jest](https://github.com/facebook/jest)
