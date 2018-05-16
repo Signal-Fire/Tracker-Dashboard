@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">64.29% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/7</span>
+        <span class='fraction'>9/14</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">42.86% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>3/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">61.54% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/7</span>
+        <span class='fraction'>8/13</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,7 +111,20 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,6 +141,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -166,59 +185,69 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import Yup from 'yup';
 import { withFormik } from 'formik';
-import { Segment, Form, Button, Label } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Form, Button } from 'semantic-ui-react';
+import { ErrorLabel } from '../../Labels';
+import * as deviceActions from '../../../containers/Devices/action';
 &nbsp;
 const options = [
     { key: 'a', text: 'Android', value: 'Android' },
     { key: 'i', text: 'iPhone', value: 'iPhone' },
   ]
 &nbsp;
-const InnerForm = ({
-    values,
-    errors,
-    touched,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isSubmitting,
-  }) =&gt; (
-    &lt;Form loading = {isSubmitting}&gt;
-        &lt;Form.Group widths='equal'&gt;
+const InnerForm = props =&gt; {
+    const {
+        values,
+        errors,
+        handleChange,
+        setFieldValue,
+        handleBlur,
+        handleSubmit,
+        isSubmitting
+      } = props;
+&nbsp;
+    const _handleSelect = <span class="fstat-no" title="function not covered" >(e</span>, { value, name }) =&gt; {
+<span class="cstat-no" title="statement not covered" >        setFieldValue(name, value);</span>
+    }
+      
+    return (
+        &lt;Form loading = {isSubmitting}&gt;
             &lt;Form.Field&gt;
-                &lt;Form.Input name = 'email' type = 'email' placeholder = 'Email Address' /&gt;
-                {errors.email ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;Label basic color='red' pointing&gt;{errors.email}&lt;/Label&gt; </span>: false}
+                {errors.email ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;ErrorLabel pointing = 'below' message = {errors.email} /&gt; </span>: false}   
+                &lt;Form.Input 
+                    value = {values.email} 
+                    onChange = {handleChange} onBlur = {handleBlur} name = 'email' type = 'email' placeholder = 'Email Address' /&gt;
             &lt;/Form.Field&gt;
-        &lt;/Form.Group&gt;
-        &lt;Form.Group widths = 'equal'&gt;
-            &lt;Form.Field&gt;
-                &lt;Form.Select name ='deviceType' placeholder = 'Device Type' options = {options} /&gt;
-                {errors.deviceType ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;Label basic color = 'red' pointing&gt;{errors.deviceType}&lt;/Label&gt; </span>: false}
-            &lt;/Form.Field&gt;
-            &lt;Form.Field&gt;
-                &lt;Button 
-                    positive
-                    type = 'submit'
-                    name = 'add'
-                    content = 'Add New User'
-                    onClick = {handleSubmit}
-                /&gt;
-            &lt;/Form.Field&gt;
-        &lt;/Form.Group&gt;
-    &lt;/Form&gt;
-);
+            &lt;Form.Group widths = 'equal'&gt;
+                &lt;Form.Field&gt;
+                    &lt;Form.Select 
+                        onChange = { _handleSelect }
+                        name ='deviceType' placeholder = 'Device Type' options = {options} /&gt;
+                    {errors.deviceType ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;ErrorLabel pointing message = {errors.deviceType} /&gt; </span>: false}
+                &lt;/Form.Field&gt;
+                &lt;Form.Field&gt;
+                    &lt;Button 
+                        positive
+                        type = 'submit' name = 'add' content = 'Add New User' onClick = {handleSubmit} /&gt;
+                &lt;/Form.Field&gt;
+            &lt;/Form.Group&gt;
+        &lt;/Form&gt;
+    );
+}
 &nbsp;
 const CreateDeviceForm = withFormik({
     mapPropsToValues : () =&gt; ({
@@ -230,24 +259,25 @@ const CreateDeviceForm = withFormik({
         deviceType : Yup.string().required('Device Type is required!'),
     }),
     handleSubmit : <span class="fstat-no" title="function not covered" >(v</span>alues, { props, setSubmitting }) =&gt; {
-<span class="cstat-no" title="statement not covered" >        console.log(values);  </span>
+<span class="cstat-no" title="statement not covered" >        props.addDevice(values.email, values.deviceType, <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            setSubmitting(false);</span>
+<span class="cstat-no" title="statement not covered" >            window.location.reload();</span>
+        })
     },
     displayName : 'Add Device'
 })(InnerForm);
 &nbsp;
-export default () =&gt; {
-    return (
-        &lt;Segment&gt;
-            &lt;CreateDeviceForm /&gt;
-        &lt;/Segment&gt;
-    );
-}</pre></td></tr>
+const mapDispatchToProps = dispatch =&gt; ({
+    addDevice : <span class="fstat-no" title="function not covered" >(e</span>mail, type, callback) =&gt; { <span class="cstat-no" title="statement not covered" >dispatch(deviceActions.addDevice(email, type, callback)) </span>}
+})
+&nbsp;
+export default connect(null, mapDispatchToProps)(CreateDeviceForm);</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 13 2018 16:47:58 GMT+0100 (BST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 16 2018 09:37:35 GMT+0100 (BST)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

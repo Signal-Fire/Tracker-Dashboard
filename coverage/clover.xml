@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1526226478511" clover="3.2.0">
-  <project timestamp="1526226478511" name="All files">
-    <metrics statements="83" coveredstatements="20" conditionals="93" coveredconditionals="4" methods="49" coveredmethods="14" elements="225" coveredelements="38" complexity="0" loc="83" ncloc="83" packages="17" files="32" classes="32">
+<coverage generated="1526459855639" clover="3.2.0">
+  <project timestamp="1526459855639" name="All files">
+    <metrics statements="155" coveredstatements="56" conditionals="105" coveredconditionals="7" methods="86" coveredmethods="29" elements="346" coveredelements="92" complexity="0" loc="155" ncloc="155" packages="27" files="49" classes="49">
       <package name="src">
-        <metrics statements="27" coveredstatements="1" conditionals="33" coveredconditionals="0" methods="19" coveredmethods="1"/>
+        <metrics statements="31" coveredstatements="1" conditionals="33" coveredconditionals="0" methods="19" coveredmethods="1"/>
         <file name="App.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/App.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
         </file>
         <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/index.js">
-          <metrics statements="11" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <metrics statements="15" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="3" coveredmethods="0"/>
           <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
           <line num="13" count="0" type="stmt"/>
           <line num="14" count="0" type="stmt"/>
-          <line num="16" count="0" type="stmt"/>
-          <line num="17" count="0" type="stmt"/>
-          <line num="19" count="0" type="cond" truecount="0" falsecount="12"/>
+          <line num="16" count="0" type="cond" truecount="0" falsecount="12"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
           <line num="21" count="0" type="stmt"/>
-          <line num="23" count="0" type="stmt"/>
           <line num="24" count="0" type="stmt"/>
-          <line num="27" count="0" type="stmt"/>
-          <line num="33" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
         </file>
         <file name="registerServiceWorker.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/registerServiceWorker.js">
           <metrics statements="15" coveredstatements="0" conditionals="21" coveredconditionals="0" methods="15" coveredmethods="0"/>
@@ -54,31 +58,47 @@
         </file>
       </package>
       <package name="src.components.Accounts.CreateForm">
-        <metrics statements="7" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <metrics statements="13" coveredstatements="8" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="3"/>
         <file name="CreateForm.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/CreateForm/CreateForm.js">
-          <metrics statements="7" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="3"/>
-          <line num="6" count="3" type="stmt"/>
-          <line num="11" count="3" type="stmt"/>
-          <line num="20" count="3" type="stmt"/>
-          <line num="45" count="3" type="stmt"/>
-          <line num="46" count="3" type="stmt"/>
-          <line num="55" count="0" type="stmt"/>
-          <line num="61" count="3" type="stmt"/>
+          <metrics statements="13" coveredstatements="8" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="3"/>
+          <line num="9" count="3" type="stmt"/>
+          <line num="14" count="3" type="stmt"/>
+          <line num="23" count="3" type="stmt"/>
+          <line num="25" count="3" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="29" count="3" type="stmt"/>
+          <line num="54" count="3" type="stmt"/>
+          <line num="55" count="3" type="stmt"/>
+          <line num="64" count="0" type="stmt"/>
+          <line num="65" count="0" type="stmt"/>
+          <line num="66" count="0" type="stmt"/>
+          <line num="72" count="3" type="stmt"/>
+          <line num="73" count="0" type="stmt"/>
         </file>
         <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/CreateForm/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="src.components.Accounts.Feed">
-        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
         <file name="Feed.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/Feed/Feed.js">
-          <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-          <line num="7" count="3" type="stmt"/>
-          <line num="10" count="3" type="stmt"/>
-          <line num="15" count="0" type="stmt"/>
-          <line num="29" count="3" type="stmt"/>
+          <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+          <line num="8" count="3" type="stmt"/>
+          <line num="12" count="3" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="36" count="3" type="stmt"/>
         </file>
         <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/Feed/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.components.Accounts.Feed.DefaultEvent">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="DefaultEvent.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/Feed/DefaultEvent/DefaultEvent.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="7" count="1" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/Feed/DefaultEvent/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
@@ -123,10 +143,15 @@
         </file>
       </package>
       <package name="src.components.Accounts.Feed.FeedEvent.Remove">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
         <file name="Remove.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/Feed/FeedEvent/Remove/Remove.js">
-          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="5" count="2" type="stmt"/>
+          <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
+          <line num="6" count="5" type="stmt"/>
+          <line num="10" count="2" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="25" count="5" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
         </file>
         <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/Feed/FeedEvent/Remove/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -146,7 +171,7 @@
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="Overview.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/Overview/Overview.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="8" count="2" type="stmt"/>
+          <line num="9" count="2" type="stmt"/>
         </file>
         <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Accounts/Overview/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -162,46 +187,174 @@
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
+      <package name="src.components.Labels">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Labels/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.components.Labels.Error">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Labels/Error/index.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="8" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.Login">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Login/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.components.Login.Modal">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="LoginModal.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Login/Modal/LoginModal.js">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="10" count="2" type="stmt"/>
+          <line num="24" count="2" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Login/Modal/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.components.Login.Modal.LoginForm">
+        <metrics statements="8" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="3"/>
+        <file name="LoginForm.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Login/Modal/LoginForm/LoginForm.js">
+          <metrics statements="8" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="3"/>
+          <line num="10" count="3" type="stmt"/>
+          <line num="19" count="3" type="stmt"/>
+          <line num="43" count="3" type="stmt"/>
+          <line num="44" count="3" type="stmt"/>
+          <line num="53" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="60" count="3" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Login/Modal/LoginForm/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.components.Login.Modal.Template">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/Login/Modal/Template/index.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="4" count="3" type="stmt"/>
+          <line num="14" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.MenuBar">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="MenuBar.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/MenuBar/MenuBar.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="6" count="3" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/MenuBar/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.components.MenuBar.Logout">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <file name="Logout.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/MenuBar/Logout/Logout.js">
+          <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+          <line num="6" count="4" type="stmt"/>
+          <line num="9" count="4" type="stmt"/>
+          <line num="12" count="4" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/components/MenuBar/Logout/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
       <package name="src.config">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/config/index.js">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="2" count="5" type="stmt"/>
+          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="12" type="stmt"/>
+          <line num="2" count="12" type="stmt"/>
+          <line num="4" count="12" type="stmt"/>
+          <line num="5" count="12" type="stmt"/>
+          <line num="6" count="12" type="stmt"/>
+          <line num="7" count="12" type="stmt"/>
         </file>
       </package>
       <package name="src.containers">
-        <metrics statements="2" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <file name="index.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/containers/index.js">
-          <metrics statements="2" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
           <line num="1" count="0" type="stmt"/>
-          <line num="2" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
         </file>
       </package>
       <package name="src.containers.Devices">
-        <metrics statements="14" coveredstatements="0" conditionals="25" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <metrics statements="29" coveredstatements="8" conditionals="17" coveredconditionals="0" methods="14" coveredmethods="3"/>
         <file name="action.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/containers/Devices/action.js">
-          <metrics statements="7" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="6" coveredmethods="0"/>
-          <line num="1" count="0" type="stmt"/>
-          <line num="2" count="0" type="stmt"/>
-          <line num="4" count="0" type="cond" truecount="0" falsecount="12"/>
-          <line num="6" count="0" type="stmt"/>
-          <line num="7" count="0" type="stmt"/>
-          <line num="11" count="0" type="stmt"/>
+          <metrics statements="16" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="3"/>
+          <line num="6" count="7" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
           <line num="19" count="0" type="stmt"/>
+          <line num="28" count="7" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="56" count="7" type="stmt"/>
+          <line num="57" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="68" count="0" type="stmt"/>
+          <line num="70" count="0" type="stmt"/>
+          <line num="76" count="0" type="stmt"/>
         </file>
         <file name="actionTypes.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/containers/Devices/actionTypes.js">
-          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="0" type="stmt"/>
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="7" type="stmt"/>
+          <line num="2" count="7" type="stmt"/>
+          <line num="3" count="7" type="stmt"/>
         </file>
         <file name="reducer.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/containers/Devices/reducer.js">
-          <metrics statements="6" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <metrics statements="10" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="2" coveredmethods="0"/>
           <line num="1" count="0" type="stmt"/>
           <line num="9" count="0" type="stmt"/>
-          <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="11" count="0" type="cond" truecount="0" falsecount="4"/>
           <line num="13" count="0" type="stmt"/>
-          <line num="20" count="0" type="stmt"/>
-          <line num="22" count="0" type="cond" truecount="0" falsecount="8"/>
+          <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="37" count="0" type="cond" truecount="0" falsecount="8"/>
+        </file>
+      </package>
+      <package name="src.containers.Users">
+        <metrics statements="17" coveredstatements="4" conditionals="14" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <file name="action.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/containers/Users/action.js">
+          <metrics statements="8" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+          <line num="6" count="6" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="34" count="6" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+        </file>
+        <file name="actionTypes.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/containers/Users/actionTypes.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="2" count="6" type="stmt"/>
+        </file>
+        <file name="reducer.js" path="/Users/henrypye/Documents/Projects/PHD-App/Tracker-Dashboard/src/containers/Users/reducer.js">
+          <metrics statements="7" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="10" count="0" type="cond" truecount="0" falsecount="3"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="24" count="0" type="cond" truecount="0" falsecount="8"/>
         </file>
       </package>
       <package name="src.store">
